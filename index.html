@@ -4,8 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- tailwind Css CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                "header-color": "rgba(16, 144, 216, 0.1)",
+                "border-color" : "rgba(17, 17, 17, 0.1)",
+                "btn-color" : "rgb(16, 144, 216)",
+                "para-text-color": "rgb(65, 65, 65)"
+              }
+            }
+          }
+        }
+      </script>
+      <style>
+        .inter-font{
+            font-family: "Inter", sans-serif;
+        }
+      </style>
 </head>
-<body>
-    
+<body class="inter-font container mx-auto px-12">
+   <header class="flex justify-between items-center mt-6 bg-header-color p-5 rounded-xl mb-12">
+     <div class="">
+      <h1 class="text-5xl font-bold mb-2">Interactive</h1>
+      <h3 class="text-2xl text-para-text-color">Geometry Genius</h3>
+     </div>
+     <div class="">
+      <button class="bg-btn-color px-8 py-2 rounded-xl text-white">Blog</button>
+     </div>
+   </header>
+   <main class="">
+    <div class="flex gap-6">
+        <!--------- input---------------------->
+        <div class="w-9/12 ">
+         <div class="card grid grid-cols-3 gap-6">
+
+            <div class="card-item flex flex-col p-12 justify-center items-center border-2 border-border-color rounded-xl">
+                <img src="./images/triangle.png" class="mb-10" alt="">
+                <h3 class="text-3xl font-bold">Triangle</h3>
+                <p class="text-base text-para-text-color mb-5">Area (A) = 0.5 b</p>
+                <div class="mb-12 flex gap-5">
+                  <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="tri-input1" placeholder="b"><span> cm</span>
+                  <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="tri-input2" placeholder="h"><span> cm</span>
+                </div>
+                <button onclick="TriangleCalculation()" class="bg-btn-color py-3 px-24 rounded-xl" id="">Calculate</button>     
+            </div>
+
+            <div class="card-item flex flex-col p-12 justify-center items-center border-2 border-border-color rounded-xl">
+              <img src="./images/rectangle.png" class="mb-10" alt="">
+              <h3 class="text-3xl font-bold">Rectangle</h3>
+              <p class="text-base text-para-text-color mb-5">Area (A) = 0.5 b</p>
+              <div class="mb-12 flex gap-5">
+                <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="rec-input1" placeholder="b"><span> cm</span>
+                <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="rec-input2" placeholder="h"><span> cm</span>
+              </div>
+              <button onclick="RectangleCalculation()" class="bg-btn-color py-3 px-24 rounded-xl" id="">Calculate</button>     
+            </div>
+
+            <div class="card-item flex flex-col p-12 justify-center items-center border-2 border-border-color rounded-xl">
+              <img src="./images/parallelogram.png" class="mb-10" alt="">
+              <h3 class="text-3xl font-bold">Parallelogram</h3>
+              <p class="text-base text-para-text-color mb-5">Area (A) = 0.5 b</p>
+              <div class="mb-12 flex gap-5">
+                <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="pal-input1" placeholder="b"><span> cm</span>
+                <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="pal-input2" placeholder="h"><span> cm</span>
+              </div>
+              <button onclick="ParallelogramCalculation()" class="bg-btn-color py-3 px-24 rounded-xl" id="">Calculate</button>     
+            </div>
+
+            <div class="card-item flex flex-col p-12 justify-center items-center border-2 border-border-color rounded-xl">
+              <img src="./images/rhombus.png" class="mb-10" alt="">
+              <h3 class="text-3xl font-bold">Rhombus</h3>
+              <p class="text-base text-para-text-color mb-5">Area (A) = 0.5 b</p>
+              <div class="mb-12 flex gap-5">
+                <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="rho-input1" placeholder="b"><span> cm</span>
+                <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="rho-input2" placeholder="h"><span> cm</span>
+              </div>
+              <button onclick="RhombusCalculation()" class="bg-btn-color py-3 px-24 rounded-xl" id="">Calculate</button>     
+            </div>
+
+            <div class="card-item flex flex-col p-12 justify-center items-center border-2 border-border-color rounded-xl">
+              <img src="./images/pentagon.png" class="mb-10" alt="">
+              <h3 class="text-3xl font-bold">Pentagon</h3>
+              <p class="text-base text-para-text-color mb-5">Area (A) = 0.5 b</p>
+              <div class="mb-12 flex gap-5">
+                <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="pen-input1" placeholder="A"><span> cm</span>
+                <!-- <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="" placeholder="h"><span> cm</span> -->
+              </div>
+              <button onclick="PentagonCalculator()" class="bg-btn-color py-3 px-24 rounded-xl" id="">Calculate</button>     
+            </div>
+
+            <div class="card-item flex flex-col p-12 justify-center items-center border-2 border-border-color rounded-xl">
+              <img src="./images/ellipse.png" class="mb-10" alt="">
+              <h3 class="text-3xl font-bold">Ellipse</h3>
+              <p class="text-base text-para-text-color mb-5">Area (A) = 0.5 b</p>
+              <div class="mb-12 flex gap-5">
+                <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="ell-input1" placeholder="b"><span> cm</span>
+                <input class="w-24 bg-gray-200 rounded-md px-3" type="text" name="" id="ell-input2" placeholder="h"><span> cm</span>
+              </div>
+              <button onclick="EllipseCalculator()" class="bg-btn-color py-3 px-24 rounded-xl" id="">Calculate</button>     
+            </div>
+            
+
+         </div>
+        </div>
+        <!---- output----------------->
+        <div class="w-3/12 relative">
+          <div class="card-item flex flex-col h-96 p-12 border-2 border-border-color rounded-xl fixed">
+              <h3 class="text-2xl font-semibold text-center underline mb-12">Area Calculation</h3> 
+              <p class="text-2xl text-center" id="p1"></p>
+          </div>
+        </div>
+    </div>
+
+   </main>
+   <script src="script.js"></script>
 </body>
 </html>
